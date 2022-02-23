@@ -55,25 +55,6 @@ class PrincipalComponent(GeneralAnalysis):
         self.hue_col = None
         self.name = 'Principal Component Analysis'
 
-    # def clean(self, dataframe):
-    #     # drop all NaN categorical var
-    #     self.categorical_cols = dataframe.select_dtypes(exclude=np.number).columns.to_list()
-    #     dataframe.dropna(subset=self.categorical_cols, inplace=True)
-    #     for col in self.categorical_cols:
-    #         self.dataframe[col].str.strip()
-    #     # Process numeric data
-    #     self.numeric_cols = dataframe.select_dtypes(include=np.number).columns.to_list()
-    #     remove_outliers_iqr(dataframe, columns=self.numeric_cols, iqr_multiplier=2)
-    #     dataframe.reset_index(drop=True, inplace=True)
-    #     for col in self.numeric_cols:
-    #         if dataframe[col].isna().sum() > 0:
-    #             dataframe[col].fillna(np.mean(dataframe[col]), inplace=True)
-    #     self.dataframe = dataframe
-    #
-    # def parse(self, datafile):
-    #     dataframe = pd.read_csv(datafile)
-    #     return dataframe
-
     def fit(self, datafile):
         if self.component is None:
             dataframe = self.parse(datafile)
